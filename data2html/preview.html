@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
+    <!-- <script src="https://unpkg.com/vue@3.2/dist/vue.global.js"></script> -->
+    <script src="https://unpkg.com/vue@3.2/dist/vue.global.prod.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/element-plus"></script>
+    <style>
+      * {
+        font-size: 13px;
+      }
+
+      #app {
+        overflow-x: auto;
+        /* display: flex; */
+        /* justify-content: center; */
+        /* height: 100vh; */
+        width: 300vw;
+      }
+
+      table {
+        /*min-width: 100vw;*/
+        /* table-layout: fixed; */
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <n-button>Default</n-button>
+      <n-button type="tertiary"> Tertiary </n-button>
+      <n-button type="primary"> Primary </n-button>
+
+      <el-table :data="tableData" border style="width: 100%">
+        <el-table-column prop="date" label="Date" width="180" />
+        <el-table-column prop="name" label="Name" width="180" />
+        <el-table-column prop="address" label="Address" />
+      </el-table>
+      ${data}
+    </div>
+    <script>
+
+      const tableData = [
+        {
+          date: "2016-05-03",
+          name: "Tom",
+          address: "No. 189, Grove St, Los Angeles",
+        },
+        {
+          date: "2016-05-02",
+          name: "Tom",
+          address: "No. 189, Grove St, Los Angeles",
+        },
+        {
+          date: "2016-05-04",
+          name: "Tom",
+          address: "No. 189, Grove St, Los Angeles",
+        },
+        {
+          date: "2016-05-01",
+          name: "Tom",
+          address: "No. 189, Grove St, Los Angeles",
+        },
+      ];
+      const app = Vue.createApp(data={tableData});
+      app.use(ElementPlus);
+      app.mount("#app");
+    </script>
+  </body>
+</html>
